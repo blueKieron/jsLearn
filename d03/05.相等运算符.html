@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /* 
+        相等运算符用来比较两个值是否相等，如果相等会返回true，否则返回false
+          使用==来做相等运算
+          -如果两个值类型不同则会自动进行类型转换，将其转换为相同的类型，然后再比较
+        不相等用来判断两个值是否不相等
+          使用!=来做不相等运算
+          -不相等也会对变量进行自动的类型转换
+
+        === 全等，
+          -用来判断两个值是否全等，和相等类似，不同的是它不会做类型转换
+          如果两个值的类型不同，直接返回false
+        !== 不全等
+           也是不会做类型转换
+     */
+
+     console.log("1"==1) //true
+     console.log(true =="1") //true
+     //特殊
+     console.log(null ==0) //false
+     /* 
+        undefined 衍生自null
+        所以这两个值做相等判断时，会返回true
+      */
+      console.log(undefined ==null)
+      /* 
+        NaN不和任何值相等，包括它本身
+       */
+       console.log(NaN ==NaN) //false
+       //可以通过isNaN()函数来判断一个值是否是NaN
+       console.log(isNaN(NaN))
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

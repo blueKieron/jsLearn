@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //正三角
+
+    for (i = 0; i < 5; i++) {
+      for (j = 0; j < i + 1; j++) {
+        document.write('*')
+      }
+      document.write('<br/>')
+    }
+
+    //倒三角
+    for (i = 0; i < 5; i++) {
+      for (j = 0; j < 5 - i; j++) {
+        document.write('*')
+      }
+      document.write('<br/>')
+    }
+
+    //九九乘法表
+    for (i = 1; i <= 9; i++) {
+      for (j = 1; j <= i; j++) {
+        document.write(j + '*' + i + '=' + i * j + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+      }
+      document.write('<br/>')
+    }
+
+    //打印2-100之间的质数
+    for (var i = 2; i <= 100; i++) {
+      var flag = true
+      for (var j = 2; j < i; j++) {
+        if (i % j == 0) {
+          flag = false
+        }
+      }
+      if (flag) {
+        console.log(i)
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

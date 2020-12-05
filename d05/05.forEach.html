@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var arr=['sun','zhu','sha']
+
+    /*  
+      forEach()方法需要一个函数作为参数
+        -像这种函数，由我们创建但是不由我们调用的称为回调函数
+        -数组中有几个元素函数就会执行几次,每次执行时，浏览器会将遍历到的元素以实参的形式传递进来
+          我们可以来定义形参，来读取这些内容
+        -浏览器会在回调函数中传递三个参数
+          -第一个参数，就是当前正在遍历的元素
+          -第二个参数，就是当前正在遍历的元素的索引
+          -第三个参数，就是当前正在遍历的数组
+    */
+   //zhuyi:该方法只支持IE8以上的浏览器，IE8及以下的使用for遍历
+   arr.forEach(function(item,index,obj){
+    console.log(value)
+   })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
