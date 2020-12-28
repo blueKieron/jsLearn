@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str ="1a2b3c4d5e6f7";
+        /*  
+            split()
+                可以将一个字符串拆分为一个数组
+                方法中可以传递一个正则表达式作为参数，方法将会根据正则表达式去拆分字符串
+                这个方法即使不指定全局匹配，也会全部拆分
+        */
+        //根据任意字符拆分
+        var arr =str.split(/A-z/);
+        console.log(arr);
+
+        /*  
+            search()
+                可以搜索字符串中是否含有指定内容
+                如果搜索到指定内容，则会返回第一次出现的索引，如果没有搜索到返回-1
+                他可以接受一个正则表达式作为参数，然后根据正则表达式去检索字符串
+                这个方法只会查找一个，即使设置全局匹配也没用
+        */
+        str1= "hello abc hello aec afc";
+        res=str1.search(/a[bef]c/);
+        console.log(res);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

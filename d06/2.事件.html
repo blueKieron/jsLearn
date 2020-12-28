@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="alert('-')">button</button>
+    <script type="text/javascript">
+        /*  
+            我们可以在事件对应的属性中设置一些js代码
+            这样事件杯触发时，这些代码将会执行
+            可以为按钮的对应事件绑定处理函数的形式来响应事件
+        
+        */
+        /*  
+            事件就是用户和浏览器之间的交互行为
+            比如：点击按钮，鼠标移动，关闭窗口，
+        */
+        var btn =document.getElementById("btn");
+
+        //绑定一个点击事件
+        btn.onmousemove()=function(){
+            alert("----")
+        }
+
+    </script>
+    
+</body>
+</html>
