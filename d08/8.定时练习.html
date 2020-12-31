@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+        #box2 {
+            position: absolute;
+            left: 0;
+            top:200px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //box1
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01")
+            var btn02 = document.getElementById("btn02")
+            var btn03 = document.getElementById("btn03")
+            var timer
+            //点击按钮以后，使box1向右移动(left值增大)
+            btn01.onclick = function () {
+               move(box1,800,10)
+            }
+            
+            btn02.onclick = function () {
+               move(box1,0,-10)
+            }
+            
+            btn03.onclick=function(){
+                move(box2,800,10,function(){
+                    alert("执行完了。")
+                })
+            }
+            //尝试创建一个可以执行简单动画的函数
+            /*  
+                参数：
+                    obj：要执行动画的对象
+                    attr:要执行动画的样式
+                    target:执行动画的目标的位置
+                    speed：移动的速度
+            */
+           /*  
+                目前我们的定时器的标识由全局变量timer保存
+                所有的执行正在执行的定时器都在这个变量中保存
+           
+           */
+            // var timer;
+            function move(obj,attr,target,speed,callback){
+                clearInterval(pbj.timer)
+                obj.timer = setInterval(function () {
+                    var oldLeft = parseInt(getStyle(obj, attr));
+                    var newLeft = oldLeft + speed;
+                    if(speed <0 && newLeft<target || speed >0 && newLeft>target){
+                        newLeft=target;
+                    }
+                    obj.style[attr] = newLeft + "px";
+
+                    //当元素移动到800px使其停止执行动画
+
+                    if (newLeft == target) {
+                        clearInterval(obj.timer)
+                        callback&&callback()
+                    }
+                })
+            }
+            function getStyle(obj, name) {
+                if (window.getComputedStyle) {
+                    return getComputedStyle(obj, null)[name];
+                } else {
+                    return obj.currentStyle[name]
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">BOX1rightMOVE</button>
+    <button id="btn02">leftMOVE</button>
+    <button id="btn03">BOX2rightMOVE</button>
+    <br /><br />
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+
+</html>

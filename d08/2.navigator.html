@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Navigator
+                -代表的是当前浏览器的信息,通过该对象可以识别不同的浏览器
+                -由于历史原因，Navigator对象中的大部分属性已经都不能帮助我们识别浏览器了
+                一般我们只会使用userAgent来判断浏览器的信息
+                    -userAgent是一个字符串，这个字符串中包含有用来描述浏览器信息的内容
+                    不同的浏览器会有不同的userAgent
+                    注意：在IE11中已经将微软和IE相关的标识都已经去除了，所以我们基本已经不能通过userAgent来识别一个浏览器是否是IE了
+        
+        */
+        console.log(navigator.userAgent)
+       /*  
+            如果通过userAgent不能判断，还可以通过一些浏览器中特有的对象，来判断浏览器的信息
+            比如：ActiveXObject 
+       */
+        // !!window.ActiveXObject 在IE11中为false
+        alert("ActiveXObject" in window);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

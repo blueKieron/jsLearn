@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        //使div可以根据不同的方向键向不同的方向移动
+        /*  
+            按左键，div向左移
+            按右键，div向右移
+            ...
+        */
+        window.onload = function () {
+            var speed = 10
+
+            //创建一个变量表示方向
+            var dir = 0
+
+            //开启一个定时器，来控制div的移动
+            setInterval(function () {
+                switch (dir) {
+                    case 37:
+                        box1.style.left = box1.offsetLeft - speed + 'px';
+                        break;
+                    case 39:
+                        box1.style.left = box1.offsetLeft + speed + 'px';
+                        break;
+                    case 38:
+                        box1.style.top = box1.offsetTop - speed + 'px';
+                        break;
+                    case 40:
+                        box1.style.top = box1.offsetTop + speed + 'px';
+                        break;
+                }
+            }, 100)
+            //为document绑定一个按键被按下的事件
+            document.onkeydown = function (event) {
+                event = event || window.event
+
+                console.log(event.keyCode)
+
+                if (event.ctrlKey) {
+                    speed = 50
+                }else{
+                    speed=10
+                }
+                dir = event.keyCode
+
+                //当按键松开时，div不再移动
+                document.onkeyup = function () {
+                    dir = 0;
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>

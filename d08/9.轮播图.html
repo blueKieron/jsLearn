@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #outer{
+            position: relative;
+            width: 573px;
+            height: 320px;
+            margin: 50px auto;
+            padding: 10px 0;
+            background-color: yellowgreen;
+            overflow: hidden;
+        }
+        #imgList{
+            position: absolute;
+            left: 0;
+            list-style: none;
+        }
+        #imgList li{
+            float: left;
+            margin:0 10px
+        }
+        #navDiv{
+            position: absolute;
+            bottom: 15px;
+            left: 197px;
+        }
+        #navDiv a{
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: red;
+            opacity: 0.5;
+            /* 兼容IE8透明 */
+            filter:alpha(opacity=50)
+        }
+        #navDiv a:hover{
+            background-color: black;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //设置imgList宽度
+            var imgList =document.getElementById("imgList");
+            var imgArr=document.getElementsByTagName("img");
+
+            imgList.style.width=593*imgArr.length+"px";
+
+            //设置导航按钮居中
+            var navDiv =document.getElementById("navDiv");
+            var outer =document.getElementById("outer");
+            navDiv.style.left=(outer.offsetWidth -navDiv.offsetWidth)/2 +"px"
+            
+            //设置默认选中的效果
+            var index=0;
+            var allA=document.getElementsByTagName("a");
+            allA[index].style.backgroundColor ="black";
+
+            // 点击超链接切换到指定的图片
+            for(var i=0;i<allA.length;i++){
+                //为每一个超链接都添加一个num属性
+                allA[i].num=i;
+                allA[i].onclick=function(){
+                    clearInterval(timer)
+                    index=this.num;
+                    
+                    imgList.style.left=-593*index+"px";
+                    setA();
+                    autoChange();
+                    
+                }
+            }
+            
+            //自动切换图片
+            autoChange();
+
+            //创建一个方法用来设置选中的a
+            function setA(){
+                //判断当前索引是否是最后一张
+                if(index>=imgArr.length-1){
+                    index=0
+                    //此时显示的最后一张图片和第一张图片一样
+                    //通过css将最后一张切换为第一张
+                    imgList.style.left=0;
+                }
+
+                //遍历所有a，并将他们的北京颜色设置为红色
+                for(var i=0;i<allA.length;i++){
+                    allA.style.backgroundColor=""
+                }
+                allA[index].style.backgroundColor="black";
+            }
+            //创建一个函数，用来自动切换图片
+            var timer;
+            function autoChange(){
+                timer=setInterval(function(){
+                    index++;
+                    index%=imgArr.length;
+                    imgList.style.left=-593*index+"px";
+                    setA();
+                },3000)
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 创建一个外部的div，来作为大的容器 -->
+    <div id="outer">
+        <!-- 创建一个ul，用于放置图片 -->
+        <ul id="imgList">
+            <li><img src="./img/1.jpg"></li>
+            <li><img src="./img/2.jpg"></li>
+            <li><img src="./img/3.jpg"></li>
+            <li><img src="./img/1.jpg"></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
