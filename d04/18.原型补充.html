@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,10 @@
     /*  
       创建一个构造函数
     */
-    function Myclass(){
+    function Myclass() {
 
     }
-    Myclass.prototype.name ='prototype of name'
+    Myclass.prototype.name = 'prototype of name'
     var mc = new Myclass();
     console.log(mc.name)
 
@@ -20,9 +21,9 @@
 
     //可以使用对象的hasOwnProperty()来检查对象自身中是否含有该属性
     mc.hasOwnProperty('name')
-    
 
-    /*  
+
+    /*
       原型对象也是对象，所以它也有原型
         当我们使用一个对象的属性或方法时，会先在自身中寻找
           自身中如果有，则直接使用
@@ -33,7 +34,9 @@
     */
   </script>
 </head>
+
 <body>
-  
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,27 +21,29 @@
 
         当我们访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则会去原型对象中寻找，找到则直接使用
     */
-    function Person(){
-      
+    function Person() {
+
     }
     //向Myclass的原型中添加属性a
-    Myclass.prototype.a=123;
+    Myclass.prototype.a = 123;
     //向Myclass的原型中添加一个方法
-    Myclass.prototype.sayHello =function(){
+    Myclass.prototype.sayHello = function () {
       alert('hello')
     }
-    function Myclass(){
+    function Myclass() {
 
     }
     // console.log(Person.prototype==Myclass.prototype)
-    var mc =new Myclass();
+    var mc = new Myclass();
     // console.log(mc.__proto__)
 
     console.log(mc.a)
     mc.sayHello()
   </script>
 </head>
+
 <body>
-  
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +15,16 @@
         -call()方法可以将实参在对象之后依次传递
         -apply()方法需要将实参封装到一个数组中统一传递
     */
-   var obj={}
+    var obj = {}
 
-    function fun(a,b){
-      console.log(a,b)
+    function fun(a, b) {
+      console.log(a, b)
     }
     // fun.call(obj)
-    fun.call(obj,1,2)
-    fun.apply(obj,[1,2])
+    fun.call(obj, 1, 2)
+    fun.apply(obj, [1, 2])
 
-    /*  
+    /*
       this的情况：
         1.以函数形式调用时，this永远都是window
         2.以方法的形式调用时，this是调用方法的对象
@@ -33,7 +34,9 @@
     */
   </script>
 </head>
+
 <body>
-  
+
 </body>
+
 </html>
