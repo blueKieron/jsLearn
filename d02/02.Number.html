@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mathjs/11.8.0/math.min.js"></script>
   <script>
     /* 
       在js中所有的数值都是number类型
@@ -18,17 +19,31 @@
          Number.MAX_VALUE
          1.7976931348623157e+308
          如果使用Nmber表示的数字超过了最大值，则会返回一个Infinity 表示正无穷
-         使用typeof检查infinity会返回number
+         使用typeof检查Infinity会返回number
        js中数字最小值 大于0的最小值
         Number.MIN_VALUE
         5e-324
      */
     console.log(Number.MAX_VALUE * Number.MAX_VALUE)
     console.log(Number.MIN_VALUE)
-    /* 
+    /*
       NaN是一个特殊的数字，表示Not a Number
         使用typeof检查也会返回number
-    */                                                   
+    */
+
+    /* 
+      在JS中整数的运算基本可以保证精确
+      如果使用JS进行浮点运算，可能得到一个不精确的结果
+     */
+
+
+    let type1 = math.bignumber(0.1)            // 使用math.js转换数据类型，才可保证计算的精确性
+    let type2 = math.bignumber(0.2)
+    let result = math.number(math.add(type1, type2))    // 相加计算后需要再次转换为数值类型
+    console.log(result)
+
+    const precision = 14.0222
+    console.log(math.format(20.1, precision))
   </script>
 </head>
 

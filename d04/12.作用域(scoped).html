@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    /*  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*  
       作用域
         -作用域指一个变量的作用范围
         -在js中一共有两种作用域
@@ -36,26 +36,21 @@
 
     */
 
-    var c=33;
-    //在函数中，不使用var声明的变量都会成为全局变量
-    function fun5(){
-      console.log('c='+c);
-      c=10; 
-    }
-    fun5(); //c=33
-    console.log(c) //c=10
+      var c = 33;
+      //在函数中，不使用var声明的变量都会成为全局变量
+      function fun5() {
+        console.log("c=" + c);
+        c = 10;
+      }
+      fun5(); //c=33
+      console.log(c); //c=10
 
-
-    //定义形参就相当于在函数作用域中声明了变量
-    function fun6(e){
-      alert(e)
-    }
-    fun6()
-
-    
-  </script>
-</head>
-<body>
-  
-</body>
+      //定义形参就相当于在函数作用域中声明了变量
+      function fun6(e) {
+        alert(e);
+      }
+      fun6();
+    </script>
+  </head>
+  <body></body>
 </html>

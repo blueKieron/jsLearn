@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,37 +15,39 @@
       >=
       <=
      */
-     /* 
-        非数值类型情况
-          -对于非数值进行比较时，会将其转换为数字然后再比较
-          -如果符号两侧的值都是字符串时，不会将其转换为数字进行比较，而会分别比较字符串中字符的Unicode编码
-     
-     
-      */
-     var  result = 5>10
-     console.log(typeof(result))
-
-
-     //console.log(1>true) //false
-     //console.log(1>=true) //true
-     console.log(1 >"0") //true
-     console.log(10 > null) //true
-     //任何值和NaN做比较都是false
-     console.log(10 <="hello") //false
-     console.log(true > false) //true
-
-     //比较两个字符串时，比较的是字符串的字符编码
-     //比较字符编码时是一位一位进行比较 如果两位一样，则比较下一位
-     console.log("1"<"5") //true
-     console.log("11"<"5") //true
-     console.log("a"<"b") //true
-     console.log("abc"<"b") //true
-
+    /* 
+       非数值类型情况
+         -对于非数值进行比较时，会将其转换为数字然后再比较
+         -如果符号两侧的值都是字符串时，不会将其转换为数字进行比较，而会分别比较字符串中字符的Unicode编码
     
+    
+     */
+    var result = 5 > 10
+    console.log(typeof (result))
+
+
+    //console.log(1>true) //false
+    //console.log(1>=true) //true
+    console.log(1 > "0") //true
+    console.log(10 > null) //true
+    //任何值和NaN做比较都是false
+    console.log(10 <= "hello") //false
+    console.log(true > false) //true
+
+    //比较两个字符串时，比较的是字符串的字符编码
+    //比较字符编码时是一位一位进行比较 如果两位一样，则比较下一位，所以借用它来对英文进行排序
+    console.log("1" < "5") //true
+    console.log("11" < "5") //true
+    console.log("a" < "b") //true
+    console.log("abc" < "b") //true
+
+
   </script>
 
 </head>
+
 <body>
-  
+
 </body>
+
 </html>

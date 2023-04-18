@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    /* 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
       循环语句
         通过循环语句可以反复的执行一段代码多次
 
@@ -18,15 +17,19 @@
       do...while()循环
       for()循环
      */
-    var i = 0;
-    for (; i < 10;) {
-      alert(i++);
-    }
-  </script>
-</head>
+      var i = 0;
+      for (; i < 10; ) {
+        alert(i++);
+      }
 
-<body>
+      for (var i = 1; i <= 9; i++) {
+        for (var j = 1; j <= i; j++) {
+          document.write(`${j}*${i}=${i * j}&nbsp;&nbsp;`);
+        }
+        document.write("<br />");
+      }
+    </script>
+  </head>
 
-</body>
-
+  <body></body>
 </html>
