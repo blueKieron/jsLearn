@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        /*  
+      /*  
             onload事件会在整个页面加载完成之后才触发
             为window绑定一个onload事件
                 该事件对应的响应函数将会在页面加载完成之后执行
                 这样可以确保我们的代码执行时所有的DOM对象已经加载完毕了
         */
-        window.onload=function(){
-            alert('===')
-        }
+      window.onload = function () {
+        alert("===");
+      };
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <button id="btn" onclick="alert('-')">button</button>
     <script type="text/javascript">
-       /*  
+      /*  
             浏览器在加载一个页面时，是按照从上向下的顺序加载的
                 读取到一行就运行一行
             将js代码编写到页面的下部就是为了可以在页面加载完毕以后再执行js代码
        */
 
-       /*  
+      /*  
             onload事件会在整个页面加载完成之后才触发
             为window绑定一个onload事件
        */
 
-        var btn =document.getElementById("btn");
+      var btn = document.getElementById("btn");
 
-        //绑定一个点击事件
-        btn.onmousemove =function(){
-            alert("----")
-        }
-
+      //绑定一个点击事件
+      btn.onmousemove = function () {
+        alert("----");
+      };
     </script>
-    
-</body>
+  </body>
 </html>
